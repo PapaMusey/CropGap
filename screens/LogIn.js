@@ -5,9 +5,28 @@ import {
   TextInput,
   StyleSheet,
 } from "react-native";
-import React from "react";
+import { AntDesign } from "@expo/vector-icons";
+import React, { useState } from "react";
 
 export default function LogIn({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [seePassword, setseePassword] = useState(true);
+  const [checkValidEmail, setcheckValidEmail] = useState(false);
+
+  const handleCheckEmail = (text) => {
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const isValidEmail = emailRegex.test(email);
+
+    if (isValidEmail) {
+      console.log("Valid email!");
+      // Perform further actions for valid email
+    } else {
+      console.log("Invalid email!");
+      // Handle invalid email case
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View>
@@ -18,9 +37,15 @@ export default function LogIn({ navigation }) {
       </View>
       <View>
         <Text style={styles.flow}>Email address</Text>
+        {checkValidEmail ? (
+          <Text>Youve entered the wrong format</Text>
+        ) : (
+          <Text></Text>
+        )}
         <TextInput
           style={styles.input}
-          onChangeText={(text) => console.log(text)}
+          onChangeText={(text) => handleCheckEmail(text)}
+          value={email}
           placeholder="Enter your email"
         />
       </View>
@@ -28,8 +53,15 @@ export default function LogIn({ navigation }) {
         <Text style={styles.flow}>Password</Text>
         <TextInput
           style={styles.input}
-          onChangeText={(text) => console.log(text)}
+          onChangeText={(text) => setPassword(text)}
+          value={password}
+          secureTextEntry={seePassword}
           placeholder="Enter your Password"
+          icon={
+            <TouchableOpacity>
+              <AntDesign name="eye" size={24} color="yellow" />
+            </TouchableOpacity>
+          }
         />
       </View>
       <TouchableOpacity onPress={() => console.log("navigation")}>

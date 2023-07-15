@@ -21,7 +21,7 @@ export default function FarmListScreen({ navigation }) {
           <View>
             <TouchableOpacity
               style={styles.greenbutton}
-              onPress={() => navigation.navigate("CalendarScreen")}
+              onPress={() => navigation.navigate("AddFarm")}
             >
               <Text style={styles.buttonText}>Enter Farm</Text>
             </TouchableOpacity>

@@ -45,6 +45,7 @@ export default function CreateAccountScreen({ navigation }) {
           style={styles.input}
           onChangeText={(text) => console.log(text)}
           placeholder="Enter your Password"
+          secureTextEntry={true}
         />
       </View>
       <View>
@@ -53,6 +54,7 @@ export default function CreateAccountScreen({ navigation }) {
           style={styles.input}
           onChangeText={(text) => console.log(text)}
           placeholder="Confirm your Password"
+          secureTextEntry={true}
         />
       </View>
       <View></View>

@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
+  KeyboardAvoidingView,
 } from "react-native";
 import React from "react";
 
@@ -11,34 +12,75 @@ export default function AddFarm() {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.titlep}>Add Farm</Text>
+        <Text style={styles.titlep}>Add New Item</Text>
       </View>
 
       <View>
-        <Text style={styles.flow}>Farm Name</Text>
+        <Text style={styles.flow}>Item Name</Text>
         <TextInput
           style={styles.input}
           onChangeText={(text) => console.log(text)}
-          placeholder="Enter name of farm"
+          placeholder="Name of Item"
         />
       </View>
       <View>
-        <Text style={styles.flow}>Location</Text>
+        <Text style={styles.flow}>Category</Text>
         <TextInput
           style={styles.input}
           onChangeText={(text) => console.log(text)}
-          placeholder="Enter farm location"
+          placeholder="Category of item"
         />
       </View>
 
       <View>
-        <Text style={styles.flow}>Size of Land</Text>
+        <Text style={styles.flow}>Quantity</Text>
         <TextInput
           style={styles.input}
           onChangeText={(text) => console.log(text)}
-          placeholder="Enter Size/Area of Land"
+          keyboardType="numeric"
+          placeholder="Number of Item (s)"
         />
       </View>
+
+      <View>
+        <Text style={styles.flow}>Weight</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => console.log(text)}
+          keyboardType="numeric"
+          placeholder="Weight of Item"
+        />
+      </View>
+
+      <View>
+        <Text style={styles.flow}>Unit Price</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => console.log(text)}
+          keyboardType="numeric"
+          placeholder="Unit Price"
+        />
+      </View>
+      <KeyboardAvoidingView>
+        <View>
+          <Text style={styles.flow}>Description</Text>
+          <TextInput
+            style={styles.description}
+            onChangeText={(text) => console.log(text)}
+            placeholder="Description"
+          />
+        </View>
+
+        <View>
+          <Text style={styles.flow}>Image Upload</Text>
+          <TextInput
+            style={styles.description}
+            onChangeText={(text) => console.log(text)}
+            placeholder="Description"
+          />
+        </View>
+      </KeyboardAvoidingView>
+
       <View>
         <TouchableOpacity
           style={styles.button}
@@ -82,6 +124,17 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     fontSize: 14,
     borderColor: "#777777",
+  },
+  description: {
+    borderRadius: 10,
+    borderWidth: 1,
+    height: 125,
+    paddingVertical: 0,
+    paddingHorizontal: 0,
+    paddingLeft: 10,
+    fontSize: 14,
+    borderColor: "#777777",
+    textAlign: "left",
   },
   titlep: {
     fontWeight: "500",

@@ -8,3 +8,11 @@ export default function Navigation() {
     </NavigationContainer>
   );
 }
+
+//import UserNavigator from "./userStack";
+
+{
+  /* <NavigationContainer>
+<UserNavigator />
+</NavigationContainer> */
+}

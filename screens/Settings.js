@@ -59,7 +59,7 @@ export default function Settings({ navigation }) {
           onPress={() => console.log("navigation")}
         >
           <View style={styles.wrap}>
-          <Feather name="moon" size={24} color="black" />
+            <Feather name="moon" size={24} color="black" />
             <Text style={styles.buttonText}>Theme</Text>
           </View>
         </TouchableOpacity>

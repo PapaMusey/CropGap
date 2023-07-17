@@ -9,7 +9,6 @@ import AddFarm from "./screens/AddFarm";
 import Security from "./screens/Security";
 import Settings from "./screens/Settings";
 import Navigation from "./navigation";
-import CalendarScreen from "./screens/CalendarScreen";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {

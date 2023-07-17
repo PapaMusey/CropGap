@@ -1,10 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import RootNavigator from "./rootStack";
+import UserStack from "./userStack";
 
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <RootNavigator />
+      {/* <RootNavigator /> */}
+      <UserStack />
     </NavigationContainer>
   );
 }

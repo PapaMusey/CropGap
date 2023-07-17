@@ -5,7 +5,6 @@ import CreateAccountScreen from "../screens/CreateAccountScreen";
 import FarmListScreen from "../screens/FarmListScreen";
 import AddFarm from "../screens/AddFarm";
 import FarmManagement from "../screens/FarmManagement";
-import CalendarScreen from "../screens/CalendarScreen";
 import Settings from "../screens/Settings";
 import Weather from "../screens/Weather";
 import Theme from "../screens/Theme";
@@ -17,7 +16,10 @@ const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator
+      initialRouteName="Login
+    "
+    >
       <Stack.Screen
         name="Landing"
         component={LandingScreen}
@@ -60,13 +62,7 @@ export default function RootNavigator() {
           header: () => null,
         }}
       />
-      <Stack.Screen
-        name="CalendarScreen"
-        component={CalendarScreen}
-        options={{
-          header: () => null,
-        }}
-      />
+
       <Stack.Screen
         name="Settings"
         component={Settings}

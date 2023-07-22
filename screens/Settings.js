@@ -28,7 +28,7 @@ export default function Settings({ navigation }) {
             fill="#E7FFE8"
           />
           <View style={styles.headercontainer}>
-            <View>
+            {/* <View>
               <View>
                 <Feather
                   name="menu"
@@ -37,7 +37,7 @@ export default function Settings({ navigation }) {
                   style={styles.hmenu}
                 />
               </View>
-            </View>
+            </View> */}
 
             <View>
               <Text style={styles.farmtitle}>CropGap</Text>

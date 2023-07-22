@@ -5,8 +5,8 @@ import UserStack from "./userStack";
 export default function Navigation() {
   return (
     <NavigationContainer>
-      {/* <RootNavigator /> */}
-      <UserStack />
+      <RootNavigator />
+      {/* <UserStack /> */}
     </NavigationContainer>
   );
 }

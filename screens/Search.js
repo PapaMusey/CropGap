@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import React from "react";
 
-export default function AddData() {
+export default function AddNewItem() {
   return (
     <View>
       <View>

@@ -7,40 +7,23 @@ import {
 } from "react-native";
 import React from "react";
 
-export default function AddNewItem() {
+export default function Search() {
   return (
-    <View>
-      <View>
-        <Text>AddData</Text>
-      </View>
-      <View>
-        <Text style={styles.flow}>Category of Data</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(text) => console.log(text)}
-          placeholder="Select Category"
-        />
-      </View>
-      <View>
-        <Text style={styles.flow}>Data Information</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(text) => console.log(text)}
-          placeholder="Enter any relevant information about the selected category"
-        />
-      </View>
-      <View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => console.log("navigation")}
-        >
-          <Text style={styles.buttonText}>Save</Text>
-        </TouchableOpacity>
-      </View>
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text) => console.log(text)}
+        placeholder="Search"
+      />
     </View>
   );
 }
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 50,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+  },
   buttonText: {
     textAlign: "center",
     paddingBottom: 10,
@@ -66,6 +49,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 100,
     paddingLeft: 10,
     fontSize: 14,
-    borderColor: "#777777",
+    borderColor: "green",
   },
 });

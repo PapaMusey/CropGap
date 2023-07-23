@@ -37,11 +37,7 @@ export default function LogIn({ navigation }) {
       </View>
       <View>
         <Text style={styles.flow}>Email address</Text>
-        {checkValidEmail ? (
-          <Text>Youve entered the wrong format</Text>
-        ) : (
-          <Text></Text>
-        )}
+
         <TextInput
           style={styles.input}
           onChangeText={(text) => handleCheckEmail(text)}
@@ -59,7 +55,7 @@ export default function LogIn({ navigation }) {
           placeholder="Enter your Password"
           icon={
             <TouchableOpacity>
-              <AntDesign name="eye" size={24} color="yellow" />
+              <AntDesign name="eye" size={24} color="black" />
             </TouchableOpacity>
           }
         />

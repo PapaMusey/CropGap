@@ -2,7 +2,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LandingScreen from "../screens/LandingScreen";
 import LogIn from "../screens/LogIn";
 import CreateAccountScreen from "../screens/CreateAccountScreen";
-import FarmListScreen from "../screens/FarmListScreen";
 import AddFarm from "../screens/AddFarm";
 import CompanyPage from "../screens/CompanyPage";
 import Settings from "../screens/Settings";
@@ -13,12 +12,15 @@ import ProductPage from "../screens/ProductPage";
 import HamburgerMenu from "../screens/HamburgerMenu";
 import ProductCard from "../screens/ProductCard";
 import SignUpCompletion from "../screens/SignUpCompletion";
+import MyCart from "../screens/MyCart";
+import OrderHistory from "../screens/OrderHistory";
+import Search from "../screens/Search";
 
 const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName="AddFarm">
+    <Stack.Navigator initialRouteName="OrderHistory">
       <Stack.Screen
         name="Landing"
         component={LandingScreen}
@@ -47,13 +49,7 @@ export default function RootNavigator() {
           header: () => null,
         }}
       />
-      <Stack.Screen
-        name="Home"
-        component={FarmListScreen}
-        options={{
-          header: () => null,
-        }}
-      />
+
       <Stack.Screen
         name="ProductCard"
         component={ProductCard}
@@ -64,6 +60,13 @@ export default function RootNavigator() {
       <Stack.Screen
         name="AddFarm"
         component={AddFarm}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="MyCart"
+        component={MyCart}
         options={{
           header: () => null,
         }}
@@ -115,6 +118,20 @@ export default function RootNavigator() {
       <Stack.Screen
         name="HamburgerMenu"
         component={HamburgerMenu}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="OrderHistory"
+        component={OrderHistory}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="Search"
+        component={Search}
         options={{
           header: () => null,
         }}

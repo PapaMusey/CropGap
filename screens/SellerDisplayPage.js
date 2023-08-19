@@ -4,27 +4,30 @@ import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function ProductPage() {
+export default function SellerDisplayPage() {
   return (
     <View style={styles.container}>
       <View>
-        <Text> Checkout Card</Text>
+        <Text> Seller Product Card</Text>
       </View>
 
-      <View style={styles.checkoutCard}>
+      <View style={styles.c}>
         <View>
           <Image
             source={require("../assets/Images/CheckoutCardImage.png")}
             style={styles.cart}
           />
         </View>
+      </View>
+
+      <View style={styles.checkoutCard}>
         <View style={styles.middlesection}>
           <View style={styles.historydata}>
             <Text style={styles.bolden}>Tilapia</Text>
-            <Text style={styles.totalprice}> per kg</Text>
+            <Text style={styles.totalprice}> per 5kg</Text>
           </View>
 
-          <Text style={styles.state}>5 to 7 mins</Text>
+          <Text style={styles.state}>120 remaining</Text>
           <View style={styles.prices}>
             <View>
               <Text style={styles.moreDetails}>$3.4</Text>
@@ -32,23 +35,12 @@ export default function ProductPage() {
             <View>
               <Text style={styles.discounted}>$5.0</Text>
             </View>
-          </View>
-        </View>
-
-        <View style={styles.history}>
-          <Text style={styles.totalprice}>$12.20</Text>
-          <View>
-            <View style={styles.quantity}>
-              <TouchableOpacity>
-                <AntDesign name="minussquareo" size={24} color="#EA5555" />
-              </TouchableOpacity>
-              <Text style={styles.boldenquantity}> 3 </Text>
-
-              <View style={styles.quantity}>
-                <TouchableOpacity>
-                  <AntDesign name="plussquareo" size={24} color="green" />
-                </TouchableOpacity>
-              </View>
+            <View style={styles.history}>
+              <MaterialCommunityIcons
+                name="arrow-right-circle"
+                size={38}
+                color="green"
+              />
             </View>
           </View>
         </View>
@@ -60,23 +52,30 @@ export default function ProductPage() {
 const styles = StyleSheet.create({
   container: {
     marginTop: 150,
+    marginLeft: 7,
   },
   cart: {
     borderWidth: 20,
-    marginHorizontal: 10,
-    borderRadius: 100,
+    marginHorizontal: 5,
+    borderRadius: 5,
+    height: 180,
+    width: 180,
     resizeMode: "cover",
-    marginTop: -15,
+    marginTop: 0,
+  },
+  c: {
+    flexDirection: "row",
   },
   checkoutCard: {
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: "#EFEFEF",
-    borderColor: "#7F8184",
+    borderColor: "#F4F4F4",
     height: 90,
-    marginHorizontal: 13,
+    width: 183,
+    marginHorizontal: 3,
     flexDirection: "row",
-    marginTop: 20,
+    marginTop: -70,
   },
   historydata: {
     flexDirection: "row",
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     color: "#7E7200",
     textAlign: "center",
-    width: 100,
+    width: 130,
     borderColor: "#FAFFDD",
   },
   moreDetails: {
@@ -101,9 +100,7 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   history: {
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    marginBottom: 10,
+    marginLeft: 55,
   },
 
   totalprice: {
@@ -111,7 +108,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
   },
   middlesection: {
-    marginRight: 95,
+    padding: 4,
   },
   quantity: {
     marginRight: 0,

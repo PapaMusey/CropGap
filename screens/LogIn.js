@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: 10,
     paddingHorizontal: 10,
+    marginTop: 50,
   },
   bText: {
     color: "#007E23",

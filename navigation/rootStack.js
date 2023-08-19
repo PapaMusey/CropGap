@@ -15,12 +15,16 @@ import SignUpCompletion from "../screens/SignUpCompletion";
 import MyCart from "../screens/MyCart";
 import OrderHistory from "../screens/OrderHistory";
 import Search from "../screens/Search";
+import Cart from "../screens/Cart";
+import SellerDisplayPage from "../screens/SellerDisplayPage";
+import BuyerProductPage from "../screens/BuyerProductPage";
+import CompanyBuyerPage from "../screens/Company";
 
 const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName="OrderHistory">
+    <Stack.Navigator initialRouteName="CompanyBuyerPage">
       <Stack.Screen
         name="Landing"
         component={LandingScreen}
@@ -72,8 +76,22 @@ export default function RootNavigator() {
         }}
       />
       <Stack.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
         name="CompanyPage"
         component={CompanyPage}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="CompanyBuyerPage"
+        component={CompanyBuyerPage}
         options={{
           header: () => null,
         }}
@@ -102,7 +120,7 @@ export default function RootNavigator() {
         }}
       />
       <Stack.Screen
-        name="ProductPage"
+        name="ProductPage" //CheckOut Card
         component={ProductPage}
         options={{
           header: () => null,
@@ -132,6 +150,20 @@ export default function RootNavigator() {
       <Stack.Screen
         name="Search"
         component={Search}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="SellerDisplayPage"
+        component={SellerDisplayPage}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="BuyerProductPage"
+        component={BuyerProductPage}
         options={{
           header: () => null,
         }}

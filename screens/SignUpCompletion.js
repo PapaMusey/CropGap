@@ -1,6 +1,7 @@
 import {
   View,
   Text,
+  Image,
   TouchableOpacity,
   TextInput,
   StyleSheet,
@@ -27,9 +28,21 @@ export default function SignUpCompletion({ navigation }) {
         <Text style={styles.flow}>Address</Text>
         <TextInput style={styles.input} placeholder="Enter your address" />
       </View>
-      <TouchableOpacity onPress={() => console.log("navigation")}>
-        <Text style={styles.fpassword}> Forgot Password</Text>
-      </TouchableOpacity>
+      <View style={styles.flow}>
+        <Text style={styles.companyLogo}>Company Logo</Text>
+        <View style={styles.uploadImage}>
+          <TouchableOpacity>
+            <Image
+              style={{ alignSelf: "center", marginBottom: 10 }}
+              source={require("../assets/Images/upload.png")}
+            />
+          </TouchableOpacity>
+
+          <Text style={styles.imageContent}>Browse files to upload image</Text>
+          <Text style={styles.filesize}>Maximum file size: 10Mb</Text>
+        </View>
+      </View>
+
       <View>
         <TouchableOpacity
           style={styles.button}
@@ -48,6 +61,7 @@ const styles = StyleSheet.create({
   container: {
     paddingVertical: 10,
     paddingHorizontal: 10,
+    marginTop: 50,
   },
   bText: {
     color: "#007E23",
@@ -59,6 +73,10 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     color: "#777777",
   },
+  filesize: {
+    color: "#777777",
+    textAlign: "center",
+  },
   input: {
     borderRadius: 10,
     borderWidth: 1,
@@ -67,6 +85,9 @@ const styles = StyleSheet.create({
     paddingRight: 50,
     fontSize: 14,
     borderColor: "#777777",
+  },
+  imageContent: {
+    textAlign: "center",
   },
   flow: {
     marginTop: 20,
@@ -97,13 +118,27 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flexDirection: "row",
-
     marginTop: 160,
-
     justifyContent: "center",
   },
   bottomtext: {
     color: "#777777",
     paddingLeft: 20,
+  },
+  uploadImage: {
+    backgroundColor: "#d2f7c2",
+    paddingVertical: 5,
+    marginVertical: 5,
+    textAlign: "center",
+    justifyContent: "center",
+    alignContent: "center",
+    height: 150,
+    marginBottom: 50,
+    alignItems: "center",
+  },
+  companyLogo: {
+    marginTop: 0,
+    paddingLeft: 0,
+    paddingBottom: 15,
   },
 });

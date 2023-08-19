@@ -3,7 +3,7 @@ import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 
-export default function MyCart({ navigation }) {
+export default function Cart({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
@@ -11,15 +11,12 @@ export default function MyCart({ navigation }) {
           <Feather name="arrow-left" size={27} color="black" />
         </TouchableOpacity>
         <View>
-          <Text style={styles.cart}>My Cart</Text>
+          <Text style={styles.cart}>Cart</Text>
         </View>
       </View>
       <View style={styles.uppersection}>
         <View style={styles.logo}>
-          <Image
-            source={require("../assets/Images/CompanyLogo.png")}
-            style={styles.logoImage}
-          />
+          <Image source={require("../assets/Images/CompanyLogo.png")} />
         </View>
         <View style={styles.info}>
           <Text style={styles.header}>Ghana Tilapia Seed Project</Text>
@@ -54,7 +51,14 @@ export default function MyCart({ navigation }) {
           style={styles.button}
           onPress={() => navigation.navigate("Home")}
         >
-          <Text style={styles.buttonText}>Checkout</Text>
+          <Text style={styles.buttonText}>Accept Order</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.rbutton}
+          onPress={() => navigation.navigate("Home")}
+        >
+          <Text style={styles.rbuttonText}>Reject Order</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -78,7 +82,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#007E23",
     borderRadius: 10,
-    marginBottom: 120,
+    marginBottom: 10,
     marginTop: 10,
   },
   buttonText: {
@@ -94,23 +98,18 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   header: {
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: "bold",
   },
   subheader: {
-    marginBottom: 7,
     flexDirection: "row",
   },
   info: {
     justifyContent: "space-around",
   },
   logo: {
-    marginHorizontal: 10,
-    resizeMode: "contain",
-  },
-  logoImage: {
-    width: 60,
-    height: 60,
+    width: 100,
+    height: 50,
     resizeMode: "contain",
   },
   cart: {
@@ -128,5 +127,22 @@ const styles = StyleSheet.create({
   },
   bolden: {
     fontWeight: "600",
+  },
+  rbutton: {
+    backgroundColor: "#007E23",
+    borderRadius: 10,
+    marginBottom: 120,
+    marginTop: 10,
+  },
+  rbuttonText: {
+    textAlign: "center",
+    paddingBottom: 10,
+    paddingTop: 10,
+    color: "green",
+    fontSize: 18,
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "green",
+    borderRadius: 10,
   },
 });

@@ -6,8 +6,7 @@ import SettingsScreen from "../screens/Theme";
 import Theme from "../screens/Theme";
 import Settings from "../screens/Settings";
 import { Ionicons } from "@expo/vector-icons";
-import { Text } from "react-native";
-import { Image } from "react-native-svg";
+import { Image, Text } from "react-native";
 
 const Stack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -34,7 +33,7 @@ export default function UserStack() {
         options={{
           tabBarIcon: ({ color }) => (
             <>
-              {/* <Image source={require("../assets/Images/home1.Svg")} /> */}
+              <Image source={require("../assets/Images/Theme.svg")} />
             </>
           ),
         }}

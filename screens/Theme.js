@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
-const SettingsScreen = () => {
+const Theme = () => {
   const [selectedOption, setSelectedOption] = useState("Option 1");
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
   };
-
 
   return (
     <View style={styles.container}>
@@ -64,4 +63,4 @@ const styles = {
   },
 };
 
-export default SettingsScreen;
+export default Theme;

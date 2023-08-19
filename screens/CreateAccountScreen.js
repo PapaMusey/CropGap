@@ -6,13 +6,27 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
+import { AntDesign } from "@expo/vector-icons";
+import { SelectList } from "react-native-dropdown-select-list";
 
 export default function CreateAccountScreen({ navigation }) {
   const [isSelected, setSelection] = useState(true);
 
-  const handleCheckboxChange = () => {
-    setSelection(!isSelected);
-  };
+  // const handleCheckboxChange = () => {
+  //   setSelection(!isSelected);
+  // };
+
+  const [selected, setSelected] = React.useState("");
+
+  const data = [
+    { key: "1", value: "Mobiles", disabled: true },
+    { key: "2", value: "Appliances" },
+    { key: "3", value: "Cameras" },
+    { key: "4", value: "Computers", disabled: true },
+    { key: "5", value: "Vegetables" },
+    { key: "6", value: "Diary Products" },
+    { key: "7", value: "Drinks" },
+  ];
 
   return (
     <View style={styles.container}>
@@ -40,6 +54,29 @@ export default function CreateAccountScreen({ navigation }) {
       </View>
 
       <View>
+        <Text style={styles.flow}>Phone Number</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => console.log(text)}
+          placeholder="Enter your phone number"
+        />
+      </View>
+
+      <View>
+        <Text style={styles.flow}>Account Type</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => console.log(text)}
+          placeholder="Select your account"
+        />
+        <SelectList
+          setSelected={(val) => setSelected(val)}
+          data={data}
+          save="value"
+        />
+      </View>
+
+      <View>
         <Text style={styles.flow}>Password</Text>
         <TextInput
           style={styles.input}
@@ -57,7 +94,6 @@ export default function CreateAccountScreen({ navigation }) {
           secureTextEntry={true}
         />
       </View>
-      <View></View>
 
       <TouchableOpacity
         style={styles.button}
@@ -86,7 +122,7 @@ const styles = StyleSheet.create({
   container: {
     fontSize: 20,
     fontWeight: "bold",
-    marginTop: 0,
+    marginTop: 15,
     paddingVertical: 10,
     paddingHorizontal: 10,
   },
@@ -98,7 +134,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
   },
   subtitle: {
-    marginBottom: 30,
+    marginBottom: 5,
 
     color: "#777777",
   },
@@ -152,7 +188,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flexDirection: "row",
-    marginTop: 160,
+    marginTop: 20,
     justifyContent: "center",
   },
   bottomtext: {

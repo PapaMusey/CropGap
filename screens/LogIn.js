@@ -14,19 +14,6 @@ export default function LogIn({ navigation }) {
   const [seePassword, setseePassword] = useState(true);
   const [checkValidEmail, setcheckValidEmail] = useState(false);
 
-  const handleCheckEmail = (text) => {
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    const isValidEmail = emailRegex.test(email);
-
-    if (isValidEmail) {
-      console.log("Valid email!");
-      // Perform further actions for valid email
-    } else {
-      console.log("Invalid email!");
-      // Handle invalid email case
-    }
-  };
-
   return (
     <View style={styles.container}>
       <View>
@@ -66,7 +53,7 @@ export default function LogIn({ navigation }) {
       <View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("CustomerHomePage")}
         >
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
@@ -148,5 +135,14 @@ const styles = StyleSheet.create({
   bottomtext: {
     color: "#777777",
     paddingLeft: 20,
+  },
+  cart: {
+    backgroundColor: "blue",
+  },
+  imageBackground: {
+    color: "blue",
+    height: 100,
+    width: 100,
+    // border,
   },
 });

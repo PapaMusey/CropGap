@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacityBase } from "react-native";
 import React from "react";
 import {
   AntDesign,
@@ -11,13 +11,14 @@ import { Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { TextInput } from "react-native";
 
-export default function SellerDisplayPage() {
+export default function BuyerProductPage() {
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="md-chevron-back-sharp" size={30} color="black" />
         </TouchableOpacity>
+
         <View>
           <Text style={styles.companyname}>Melavor Farm Consult</Text>
         </View>
@@ -63,7 +64,7 @@ export default function SellerDisplayPage() {
         {/* The Image above shows how another product will fit onto the buyer page */}
       </View>
 
-      <View style={styles.checkoutCard}>
+      <View style={styles.productDetailsCard}>
         <View style={styles.middlesection}>
           <View style={styles.historydata}>
             <Text style={styles.bolden}>Tilapia</Text>
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
   c: {
     flexDirection: "row",
   },
-  checkoutCard: {
+  productDetailsCard: {
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: "#EFEFEF",

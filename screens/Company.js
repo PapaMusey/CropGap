@@ -4,17 +4,19 @@ import { TouchableOpacity } from "react-native";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
 import { TextInput } from "react-native";
 
-export default function CompanyBuyerPage({ navigation }) {
+export default function CustomerHomePage({ navigation }) {
   return (
+    // THIS PAGE REPRESENTS THE CUSTOMER'S HOME PAGE
+
     <View style={styles.container}>
-      <View style={styles.navbar}>
+      {/* <View style={styles.navbar}>
         <TouchableOpacity>
           <Ionicons name="md-chevron-back-sharp" size={30} color="black" />
         </TouchableOpacity>
         <View>
           <Text style={styles.companyname}>Melavor Farm Consult</Text>
         </View>
-      </View>
+      </View> */}
       <View style={styles.searchbar}>
         <View style={styles.search}>
           <TextInput
@@ -40,19 +42,21 @@ export default function CompanyBuyerPage({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.c}>
-        <View style={styles.card}>
-          <View>
-            <Image
-              source={require("../assets/Images/CheckoutCardImage.png")}
-              style={styles.cart}
-            />
-          </View>
-          <View>
-            <Text style={styles.bolden}> Ghana Tilapia Seed Project</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("BuyerProductPage")}>
+        <View style={styles.c}>
+          <View style={styles.card}>
+            <View style={styles.imageBackground}>
+              <Image
+                source={require("../assets/Images/CompanyLogo.png")}
+                style={styles.cart}
+              />
+            </View>
+            <View style={styles.textContainer}>
+              <Text style={styles.bolden}> Ghana Tilapia Seed Project</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -66,19 +70,23 @@ const styles = StyleSheet.create({
     borderWidth: 20,
     marginHorizontal: 5,
     borderRadius: 5,
-    height: 180,
-    width: 180,
+    height: 150,
+    width: 150,
     resizeMode: "cover",
     marginTop: 0,
   },
+
   c: {
     flexDirection: "row",
   },
 
   bolden: {
-    fontWeight: "bold",
+    fontWeight: "600",
     fontSize: 16,
     paddingHorizontal: 0,
+    flexWrap: "wrap", // Allow text to wrap to the next line
+    maxWidth: 180,
+    // Adjust the maximum width as needed
   },
 
   totalprice: {
@@ -94,6 +102,7 @@ const styles = StyleSheet.create({
   subheader: {
     fontSize: 18,
     fontWeight: "500",
+    marginBottom: 10,
   },
   subheader1: {
     color: "#A3A3A2",
@@ -129,5 +138,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "500",
   },
-  card: {},
+  imageBackground: {
+    borderWidth: 1,
+    borderRadius: 10,
+    backgroundColor: "#F3FFF7",
+    borderColor: "#F3FFF7",
+    height: 170,
+    width: 180,
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 5,
+    flexDirection: "row",
+    marginTop: 0,
+  },
+  textContainer: {
+    flexWrap: "wrap", // Allow text to wrap to the next line
+    maxWidth: 50, // Adjust the maximum width as needed
+  },
 });

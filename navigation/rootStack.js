@@ -18,13 +18,16 @@ import Search from "../screens/Search";
 import Cart from "../screens/Cart";
 import SellerDisplayPage from "../screens/SellerDisplayPage";
 import BuyerProductPage from "../screens/BuyerProductPage";
-import CompanyBuyerPage from "../screens/Company";
+// import CompanyBuyerPage from "../screens/Company";
+import CustomerHomePage from "../screens/Company";
+import CompanyProductsPage from "../screens/CompanyProductsPage";
+import CustomerOrderHistory from "../screens/CustomerOrderHistory";
 
 const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName="CompanyBuyerPage">
+    <Stack.Navigator initialRouteName="CustomerOrderHistory">
       <Stack.Screen
         name="Landing"
         component={LandingScreen}
@@ -53,6 +56,20 @@ export default function RootNavigator() {
           header: () => null,
         }}
       />
+      {/* <Stack.Screen
+        name="CustomerHomePage"
+        component={CustomerHomePage}
+        options={{
+          header: () => null,
+        }}
+      />
+       <Stack.Screen
+        name="FarmerHomePage"
+        component={FarmerHomePage}
+        options={{
+          header: () => null,
+        }}
+      /> */}
 
       <Stack.Screen
         name="ProductCard"
@@ -90,8 +107,15 @@ export default function RootNavigator() {
         }}
       />
       <Stack.Screen
-        name="CompanyBuyerPage"
-        component={CompanyBuyerPage}
+        name="CustomerHomePage"
+        component={CustomerHomePage}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="CompanyProductsPage"
+        component={CompanyProductsPage}
         options={{
           header: () => null,
         }}
@@ -143,6 +167,13 @@ export default function RootNavigator() {
       <Stack.Screen
         name="OrderHistory"
         component={OrderHistory}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="CustomerOrderHistory"
+        component={CustomerOrderHistory}
         options={{
           header: () => null,
         }}

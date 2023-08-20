@@ -11,6 +11,9 @@ import {
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import ProductCard from "./ProductCard";
+//  THIS PAGE IS NOT BEING USED AT THE MOMENT BUT RATHER
+//  COMPANY.JS IS BEING USED IN PLACE OF THIS
+//  SO IGNORE THIS PAGE.
 
 export default function CompanyPage({ navigation }) {
   return (

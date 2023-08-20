@@ -19,13 +19,12 @@ export default function CreateAccountScreen({ navigation }) {
   const [selected, setSelected] = React.useState("");
 
   const data = [
-    { key: "1", value: "Mobiles", disabled: true },
-    { key: "2", value: "Appliances" },
-    { key: "3", value: "Cameras" },
-    { key: "4", value: "Computers", disabled: true },
-    { key: "5", value: "Vegetables" },
-    { key: "6", value: "Diary Products" },
-    { key: "7", value: "Drinks" },
+    {
+      key: "1",
+      value: "Customer", //disabled: true },
+    },
+    { key: "2", value: "Farmer" },
+    { key: "3", value: "Agric Company" },
   ];
 
   return (
@@ -64,11 +63,7 @@ export default function CreateAccountScreen({ navigation }) {
 
       <View>
         <Text style={styles.flow}>Account Type</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(text) => console.log(text)}
-          placeholder="Select your account"
-        />
+
         <SelectList
           setSelected={(val) => setSelected(val)}
           data={data}
@@ -97,7 +92,7 @@ export default function CreateAccountScreen({ navigation }) {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.navigate("Login")}
       >
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>

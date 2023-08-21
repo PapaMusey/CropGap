@@ -27,7 +27,7 @@ export default function LogIn({ navigation }) {
 
         <TextInput
           style={styles.input}
-          onChangeText={(text) => handleCheckEmail(text)}
+          onChangeText={(text) => setEmail(text)}
           value={email}
           placeholder="Enter your email"
         />

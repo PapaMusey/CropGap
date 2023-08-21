@@ -39,7 +39,7 @@ export default function MyCart({ navigation }) {
           <Text>Sub-Total</Text>
           <Text>$57.00</Text>
         </View>
-        <View style={styles.bottomsection}>
+        <View style={styles.bottomsectionSeparator}>
           <Text>
             - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
             - - - - - - - - - - - - - - -{" "}
@@ -52,7 +52,7 @@ export default function MyCart({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("SignUp")}
         >
           <Text style={styles.buttonText}>Checkout</Text>
         </TouchableOpacity>
@@ -88,11 +88,17 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
   },
+  // bottompage: {
+  //   marginTop: 300,
+  // },
+
   bottomsection: {
     paddingVertical: 5,
+    // marginTop: 50,
     flexDirection: "row",
     justifyContent: "space-between",
   },
+
   header: {
     fontSize: 17,
     fontWeight: "bold",
@@ -124,7 +130,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   bottompage: {
-    marginTop: 300,
+    marginTop: 500,
   },
   bolden: {
     fontWeight: "600",

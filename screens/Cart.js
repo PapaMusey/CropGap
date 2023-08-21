@@ -16,7 +16,10 @@ export default function Cart({ navigation }) {
       </View>
       <View style={styles.uppersection}>
         <View style={styles.logo}>
-          <Image source={require("../assets/Images/CompanyLogo.png")} />
+          <Image
+            source={require("../assets/Images/CompanyLogo.png")}
+            style={styles.logoImage}
+          />
         </View>
         <View style={styles.info}>
           <Text style={styles.header}>Ghana Tilapia Seed Project</Text>
@@ -108,9 +111,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   logo: {
-    width: 100,
-    height: 50,
+    marginHorizontal: 10,
     resizeMode: "contain",
+  },
+  logoImage: {
+    width: 60,
+    height: 60,
+    resizeMode: "contain",
+    // justifyContent: "center",
+    // alignContent: "center",
   },
   cart: {
     fontSize: 23,
@@ -123,7 +132,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   bottompage: {
-    marginTop: 300,
+    marginTop: 450,
   },
   bolden: {
     fontWeight: "600",

@@ -3,10 +3,9 @@ import React from "react";
 import { FlatList } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { TouchableOpacity } from "@gorhom/bottom-sheet";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function OrderHistory() {
-  //FARMER ORDER HISTORY
   const orders = [
     {
       id: 1,
@@ -29,13 +28,14 @@ export default function OrderHistory() {
           <Text style={styles.heading1}>Buyer</Text>
         </View>
       </View>
+      <View style={styles.headings}></View>
       {/* <View>
         <FlatList data={orders} renderItem={oneOrder} />
       </View> */}
       <View>
         <View style={styles.orderCard}>
           <View style={styles.cart}>
-            <Feather name="shopping-cart" size={24} color="black" />
+            <Feather name="shopping-cart" size={30} color="black" />
           </View>
           <View>
             <View style={styles.historydata}>
@@ -44,7 +44,11 @@ export default function OrderHistory() {
             </View>
 
             <Text style={styles.state}>In progress</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                console.log("Touchable element was tapped");
+              }}
+            >
               <Text style={styles.moreDetails}>Tap to view more</Text>
             </TouchableOpacity>
           </View>
@@ -54,9 +58,10 @@ export default function OrderHistory() {
               name="dots-vertical"
               size={24}
               color="black"
+              style={{ alignSelf: "flex-end" }}
             />
             <View>
-              <Text>2 hours ago</Text>
+              <Text style={styles.time}>2 hours ago</Text>
             </View>
           </View>
         </View>
@@ -89,6 +94,8 @@ const styles = StyleSheet.create({
   },
   heading1: {
     fontSize: 17,
+    borderBottomWidth: 2,
+    borderColor: "green",
   },
   historydata: {
     flexDirection: "row",
@@ -99,7 +106,14 @@ const styles = StyleSheet.create({
   },
   history: {
     justifyContent: "space-between",
-    alignItems: "center",
+
+    // alignItems: "center",
+  },
+  //   dots: {
+  //     justifyContent: "flex-end",
+  //   },
+  time: {
+    fontSize: 12,
   },
   state: {
     backgroundColor: "#FAFFDD",
@@ -107,7 +121,7 @@ const styles = StyleSheet.create({
     color: "#7E7200",
     textAlign: "center",
     width: 100,
-    borderolor: "#FAFFDD",
+    borderColor: "#FAFFDD",
   },
   bolden: {
     fontWeight: "bold",
@@ -115,5 +129,12 @@ const styles = StyleSheet.create({
   cart: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#8EFDAD",
+    borderRadius: 150,
+    height: 50,
+    width: 10,
+
+    marginHorizontal: 8,
   },
 });

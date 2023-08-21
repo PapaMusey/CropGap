@@ -22,12 +22,13 @@ import BuyerProductPage from "../screens/BuyerProductPage";
 import CustomerHomePage from "../screens/Company";
 import CompanyProductsPage from "../screens/CompanyProductsPage";
 import CustomerOrderHistory from "../screens/CustomerOrderHistory";
+import ProductDetails from "../screens/ProductDetails";
 
 const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName="CustomerOrderHistory">
+    <Stack.Navigator initialRouteName="ProductDetails">
       <Stack.Screen
         name="Landing"
         component={LandingScreen}
@@ -195,6 +196,13 @@ export default function RootNavigator() {
       <Stack.Screen
         name="BuyerProductPage"
         component={BuyerProductPage}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="ProductDetails"
+        component={ProductDetails}
         options={{
           header: () => null,
         }}

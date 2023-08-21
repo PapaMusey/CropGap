@@ -9,8 +9,19 @@ import {
 import React from "react";
 import { Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { SelectList } from "react-native-dropdown-select-list";
 
 export default function AddFarm() {
+  const [selected, setSelected] = React.useState("");
+
+  const data = [
+    {
+      key: "1",
+      value: "Customer", //disabled: true },
+    },
+    { key: "2", value: "Farmer" },
+    { key: "3", value: "Agric Company" },
+  ];
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -35,10 +46,10 @@ export default function AddFarm() {
       </View>
       <View>
         <Text style={styles.flow}>Category</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(text) => console.log(text)}
-          placeholder="Category of item"
+        <SelectList
+          setSelected={(val) => setSelected(val)}
+          data={data}
+          save="value"
         />
       </View>
 

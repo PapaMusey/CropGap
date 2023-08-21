@@ -9,8 +9,6 @@ import React, { useEffect } from "react";
 import { Feather } from "@expo/vector-icons";
 import { getWeatherData } from "../services/weather.service";
 
-
-
 export default function Weather({ navigation }) {
   useEffect(() => {
     getWeatherData(5.654059768666417, -0.1842114322431313, (data) => {});
@@ -44,15 +42,15 @@ export default function Weather({ navigation }) {
         </View>
         <View style={styles.containerwraper}>
           <View>
-          <View>
-            <Text style={styles.title}>30C </Text>
-          </View>
-          <View>
-            <Text style={styles.category}>Today</Text>
-          </View>
-          <View>
-            <Text style={styles.date}>Partly Sunny Day</Text>
-          </View>
+            <View>
+              <Text style={styles.title}>30C </Text>
+            </View>
+            <View>
+              <Text style={styles.category}>Today</Text>
+            </View>
+            <View>
+              <Text style={styles.date}>Partly Sunny Day</Text>
+            </View>
           </View>
           <View style={styles.imagecontainer}>
             <Text style={styles.image}>Image</Text>

@@ -6,6 +6,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function ProductPage() {
   return (
+    //THIS PAGE IS THE PRODUCT'S CHECKOUT CARD PAGE, NOT THE PRODUCT OF A COMPANY'S PAGE (COMPANY PRODUCT PAGE)
     <View style={styles.container}>
       <View>
         <Text> Checkout Card</Text>

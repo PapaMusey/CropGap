@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Feather } from "@expo/vector-icons";
 
 export default function ProductDetails({ navigation }) {
   const bottomSheetRef = React.createRef();
@@ -12,6 +12,13 @@ export default function ProductDetails({ navigation }) {
 
   return (
     <View style={styles.container}>
+      {/* <View style={styles.navbar}>
+        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+          <Feather name="arrow-left" size={27} color="black" />
+        </TouchableOpacity>
+      </View> */}
+      {/* WORK ON BACK BUTTON */}
+      <View></View>
       <TouchableOpacity onPress={openBottomSheet}>
         <Text>Show Bottom Sheet</Text>
       </TouchableOpacity>
@@ -164,5 +171,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginHorizontal: 15,
     marginTop: 50,
+  },
+  navbar: {
+    flexDirection: "row",
   },
 });

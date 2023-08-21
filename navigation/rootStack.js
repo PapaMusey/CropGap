@@ -17,9 +17,9 @@ import OrderHistory from "../screens/OrderHistory";
 import Search from "../screens/Search";
 import Cart from "../screens/Cart";
 import SellerDisplayPage from "../screens/SellerDisplayPage";
-import BuyerProductPage from "../screens/BuyerProductPage";
+// import BuyerProductPage from "../screens/CompanyProductsPage";
 // import CompanyBuyerPage from "../screens/Company";
-import CustomerHomePage from "../screens/Company";
+import CustomerHomePage from "../screens/CustomerHomePage";
 import CompanyProductsPage from "../screens/CompanyProductsPage";
 import CustomerOrderHistory from "../screens/CustomerOrderHistory";
 import ProductDetails from "../screens/ProductDetails";
@@ -28,7 +28,7 @@ const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator initialRouteName="ProductDetails">
+    <Stack.Navigator initialRouteName="Login">
       <Stack.Screen
         name="Landing"
         component={LandingScreen}
@@ -193,13 +193,13 @@ export default function RootNavigator() {
           header: () => null,
         }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="BuyerProductPage"
         component={BuyerProductPage}
         options={{
           header: () => null,
         }}
-      />
+      /> */}
       <Stack.Screen
         name="ProductDetails"
         component={ProductDetails}

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Image } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 
 export default function SellerDisplayPage() {
   return (

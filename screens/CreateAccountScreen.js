@@ -36,11 +36,11 @@ export default function CreateAccountScreen({ navigation }) {
         <Text style={styles.subtitle}> Enter your details to sign up</Text>
       </View>
       <View>
-        <Text style={styles.flow}>Full Name</Text>
+        <Text style={styles.flow}>Full Name (or Company Name)</Text>
         <TextInput
           style={styles.input}
           onChangeText={(text) => console.log(text)}
-          placeholder="Enter your full name"
+          placeholder="Enter Full name (or Company Name)"
         />
       </View>
       <View>
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderWidth: 1,
-    padding: 10,
+    paddingLeft: 20,
   },
 
   button: {

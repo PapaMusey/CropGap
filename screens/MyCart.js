@@ -1,13 +1,13 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 export default function MyCart({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
           <Feather name="arrow-left" size={27} color="black" />
         </TouchableOpacity>
         <View>
@@ -52,7 +52,7 @@ export default function MyCart({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("SignUp")}
+          onPress={() => navigation.navigate("MyCart")}
         >
           <Text style={styles.buttonText}>Checkout</Text>
         </TouchableOpacity>
@@ -128,6 +128,9 @@ const styles = StyleSheet.create({
   },
   navbar: {
     flexDirection: "row",
+    textAlign: "center",
+    // alignItems: "flex-start",
+    // justifyContent: "space-between",
   },
   bottompage: {
     marginTop: 500,

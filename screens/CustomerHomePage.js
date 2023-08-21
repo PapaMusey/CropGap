@@ -42,7 +42,9 @@ export default function CustomerHomePage({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity onPress={() => navigation.navigate("BuyerProductPage")}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("CompanyProductsPage")}
+      >
         <View style={styles.c}>
           <View style={styles.card}>
             <View style={styles.imageBackground}>

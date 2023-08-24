@@ -23,6 +23,9 @@ import CustomerHomePage from "../screens/CustomerHomePage";
 import CompanyProductsPage from "../screens/CompanyProductsPage";
 import CustomerOrderHistory from "../screens/CustomerOrderHistory";
 import ProductDetails from "../screens/ProductDetails";
+import Payment from "../screens/Payment";
+import ConfrimPayment from "../screens/ConfrimPayment";
+import ConfirmPaymentPayment from "../screens/ConfrimPayment";
 
 const Stack = createNativeStackNavigator();
 
@@ -96,6 +99,20 @@ export default function RootNavigator() {
       <Stack.Screen
         name="Cart"
         component={Cart}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="Payment"
+        component={Payment}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="ConfirmPayment"
+        component={ConfrimPayment}
         options={{
           header: () => null,
         }}

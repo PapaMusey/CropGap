@@ -2,34 +2,45 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { TextInput } from "react-native";
+import { SelectList } from "react-native-dropdown-select-list";
 
-export default function MyCart({ navigation }) {
+export default function ConfirmPaymentPayment({ navigation }) {
+  const [selected, setSelected] = React.useState("");
+
+  const data = [
+    {
+      key: "1",
+      value: "Mtn", //disabled: true },
+    },
+    { key: "2", value: "Vodaphone" },
+    { key: "3", value: "AirtelTigo" },
+  ];
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
-        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Payment")}>
           <Feather name="arrow-left" size={27} color="black" />
         </TouchableOpacity>
         <View>
-          <Text style={styles.cart}>My Cart</Text>
-        </View>
-      </View>
-      <View style={styles.uppersection}>
-        <View style={styles.logo}>
-          <Image
-            source={require("../assets/Images/CompanyLogo.png")}
-            style={styles.logoImage}
-          />
-        </View>
-        <View style={styles.info}>
-          <Text style={styles.header}>Ghana Tilapia Seed Project</Text>
-          <View style={styles.subheader}>
-            <Text>054 4845 652 | </Text>
-            <Text>ghseed@gmail.com</Text>
-          </View>
+          <Text style={styles.cart}>Confirm Payment</Text>
         </View>
       </View>
 
+      <View>
+        <Text style={styles.flow}>Select payment type</Text>
+
+        <SelectList
+          setSelected={(val) => setSelected(val)}
+          data={data}
+          save="value"
+        />
+      </View>
+      <View>
+        <Text style={styles.flow}> Phone Number</Text>
+
+        <TextInput style={styles.input} placeholder="Enter your phone number" />
+      </View>
       <View style={styles.bottompage}>
         <View style={styles.bottomsection}>
           <Text>Discount</Text>
@@ -52,9 +63,9 @@ export default function MyCart({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Payment")}
+          onPress={() => console.log("Payment made")}
         >
-          <Text style={styles.buttonText}>Checkout</Text>
+          <Text style={styles.buttonText}>Pay Online</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -124,7 +135,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     textAlign: "center",
     marginBottom: 20,
-    marginLeft: 125,
+    marginLeft: 70,
   },
   navbar: {
     flexDirection: "row",
@@ -133,9 +144,28 @@ const styles = StyleSheet.create({
     // justifyContent: "space-between",
   },
   bottompage: {
-    marginTop: 500,
+    marginTop: 420,
   },
   bolden: {
     fontWeight: "600",
+  },
+
+  input: {
+    borderRadius: 10,
+    borderWidth: 1,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    marginHorizontal: 0,
+    fontSize: 14,
+    borderColor: "#777777",
+  },
+  flow: {
+    color: "#777777",
+    marginTop: 10,
+    paddingBottom: 5,
+    paddingLeft: 5,
+  },
+  paymentDetails: {
+    marginVertical: 10,
   },
 });

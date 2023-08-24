@@ -2,16 +2,17 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { TextInput } from "react-native";
 
-export default function MyCart({ navigation }) {
+export default function Payment({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.navbar}>
-        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+        <TouchableOpacity onPress={() => navigation.navigate("MyCart")}>
           <Feather name="arrow-left" size={27} color="black" />
         </TouchableOpacity>
         <View>
-          <Text style={styles.cart}>My Cart</Text>
+          <Text style={styles.cart}>Payment</Text>
         </View>
       </View>
       <View style={styles.uppersection}>
@@ -29,7 +30,19 @@ export default function MyCart({ navigation }) {
           </View>
         </View>
       </View>
+      <View style={styles.paymentDetails}>
+        <Text style={styles.flow}> My address</Text>
 
+        <TextInput
+          style={styles.input}
+          placeholder="Enter address for delivery"
+        />
+      </View>
+      <View>
+        <Text style={styles.flow}> Farmers address</Text>
+
+        <TextInput style={styles.input} placeholder="Oyarifa Farms" />
+      </View>
       <View style={styles.bottompage}>
         <View style={styles.bottomsection}>
           <Text>Discount</Text>
@@ -49,12 +62,15 @@ export default function MyCart({ navigation }) {
           <Text style={styles.bolden}>Total</Text>
           <Text style={styles.bolden}> $57.00</Text>
         </View>
+        <View style={styles.payment}>
+          <Text style={styles.bolden}>Payment on delivery</Text>
+        </View>
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Payment")}
+          onPress={() => navigation.navigate("ConfirmPayment")}
         >
-          <Text style={styles.buttonText}>Checkout</Text>
+          <Text style={styles.buttonText}>Pay Online</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -133,9 +149,30 @@ const styles = StyleSheet.create({
     // justifyContent: "space-between",
   },
   bottompage: {
-    marginTop: 500,
+    marginTop: 300,
   },
   bolden: {
     fontWeight: "600",
+  },
+  payment: {
+    marginVertical: 18,
+  },
+  input: {
+    borderRadius: 10,
+    borderWidth: 1,
+    paddingVertical: 5,
+    paddingHorizontal: 20,
+    marginHorizontal: 6,
+    fontSize: 14,
+    borderColor: "#777777",
+  },
+  flow: {
+    color: "#777777",
+    marginTop: 10,
+    paddingBottom: 5,
+    paddingLeft: 5,
+  },
+  paymentDetails: {
+    marginVertical: 10,
   },
 });
